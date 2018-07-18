@@ -1,55 +1,58 @@
 
 <template>
   <transition name="mint-indicator">
-    <div class="mint-indicator" v-show="visible">
-      <div class="mint-indicator-wrapper" :style="{ 'padding': text ? '20px' : '15px' }">
-        <spinner class="mint-indicator-spin" :type="convertedSpinnerType" :size="32"></spinner>
-        <span class="mint-indicator-text" v-show="text">{{ text }}</span>
-      </div>
-      <div class="mint-indicator-mask" @touchmove.stop.prevent></div>
+    <div class="mui-indicator" v-show="visible">
+        <div class="mui-indicator-body">
+        </div>
     </div>
   </transition>
 </template>
 
-<style>
+<style  scoped lang="postcss">
+.mui-indicator {
+  width: 120px;
+  height: 120px;
+  background-color: #00000080;
+  border-radius: 10px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.mui-indicator-body {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid;
+  border-color: white white white transparent;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  animation: loading 1s linear infinite;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 </style>
 
-<script type="text/babel">
-  import Spinner from 'mint-ui/packages/spinner/index.js';
-  if (process.env.NODE_ENV === 'component') {
-    require('mint-ui/packages/spinner/style.css');
+<script>
+export default {
+  data() {
+    return {
+      visible: true
+    };
   }
-  export default {
-    data() {
-      return {
-        visible: false
-      };
-    },
-    components: {
-      Spinner
-    },
-    computed: {
-      convertedSpinnerType() {
-        switch (this.spinnerType) {
-          case 'double-bounce':
-            return 1;
-          case 'triple-bounce':
-            return 2;
-          case 'fading-circle':
-            return 3;
-          default:
-            return 0;
-        }
-      }
-    },
-    props: {
-      text: String,
-      spinnerType: {
-        type: String,
-        default: 'snake'
-      }
-    }
-  };
+};
 </script>
 
 
