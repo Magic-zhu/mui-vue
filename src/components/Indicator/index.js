@@ -13,7 +13,6 @@ export default {
     }
     if (instance.visible) return;
     document.body.appendChild(instance.$el);
-
     Vue.nextTick(() => {
       instance.visible = true;
     });
