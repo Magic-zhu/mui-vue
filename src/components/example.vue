@@ -1,5 +1,7 @@
 <template>
-  <div class="hello"></div>
+<div>
+  <mui-input v-model="xx"></mui-input>
+</div>
 </template>
 
 <script>
@@ -7,7 +9,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      xx:""
     }
   }
 }
