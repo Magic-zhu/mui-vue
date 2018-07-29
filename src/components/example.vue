@@ -5,12 +5,16 @@
 </template>
 
 <script>
+import Indicator from "../components/Indicator"
 export default {
   name: 'HelloWorld',
   data () {
     return {
       xx:""
     }
+  },
+  mounted(){
+      Indicator.open();
   }
 }
 </script>
