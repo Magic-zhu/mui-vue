@@ -1,6 +1,7 @@
 <template>
 <div>
   <mui-input v-model="xx"></mui-input>
+  <mui-button class="red"></mui-button>
 </div>
 </template>
 
@@ -34,5 +35,8 @@ li {
 }
 a {
   color: #42b983;
+}
+.red{
+    background-color: red;
 }
 </style>
