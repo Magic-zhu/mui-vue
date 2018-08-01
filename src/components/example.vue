@@ -1,7 +1,6 @@
 <template>
 <div>
-  <mui-input v-model="xx"></mui-input>
-  <mui-button class="red"></mui-button>
+  <mui-input v-model="xx" :clearable="true" placeholder="good"></mui-input>
 </div>
 </template>
 
@@ -16,6 +15,9 @@ export default {
   },
   mounted(){
       Indicator.open();
+      setTimeout(()=>{
+        Indicator.close();
+      },1000)
   }
 }
 </script>

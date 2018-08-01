@@ -41,8 +41,8 @@ export default {
 </script>
 <style lang="postcss" scoped>
 .mui-button-body{
-   width: 50px;
-   height: 20px;
+   width: 200px;
+   height: 120px;
    outline: none;
 }
 </style>
