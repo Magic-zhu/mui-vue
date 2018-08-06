@@ -1,11 +1,14 @@
 <template>
-<div>
-  <mui-input v-model="xx" :clearable="true" placeholder="good"></mui-input>
-</div>
+  <transition>
+    <div>
+      <mui-input v-model="xx" :clearable="true" placeholder="good"></mui-input>
+    </div>
+  </transition>
 </template>
 
 <script>
 import Indicator from "../components/Indicator"
+import Toast from "../components/Toast"
 export default {
   name: 'HelloWorld',
   data () {
@@ -14,10 +17,7 @@ export default {
     }
   },
   mounted(){
-      Indicator.open();
-      setTimeout(()=>{
-        Indicator.close();
-      },1000)
+    Toast.open()
   }
 }
 </script>

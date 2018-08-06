@@ -1,6 +1,6 @@
 
 <template>
-  <transition name="mint-indicator">
+  <transition>
     <div class="mui-indicator" v-show="visible">
         <div class="mui-indicator-body">
         </div>
