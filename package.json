@@ -1,6 +1,6 @@
 {
-  "name": "mui-vue",
-  "version": "1.0.0",
+  "name": "rui-vue",
+  "version": "1.0.1",
   "description": "a vue ui for minisite",
   "author": "Alex.zhu <2489180202@qq.com>",
   "private": true,

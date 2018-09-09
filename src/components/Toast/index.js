@@ -18,23 +18,27 @@ export default{
             //挂载实例
             instance = new Toast({
                 el:document.createElement("div"),
-                propsData:options
             })
         }
         if (instance.visible) return;
+        //判断有没有自定义的提示信息内容
+        if(options&&options.message){
+            instance.message=options.message
+        }
         //插入到页面中
         document.body.appendChild(instance.$el);
-        let time="3000"
-        //默认延迟关闭时间 3s
+        let time=3000;
+        //默认延迟关闭时间 3s 当设置time=-1的时候需要手动关闭
         if(options&&options.time){
             time=options.time
         }
-        
         Vue.nextTick(() => {
           instance.visible = true;
-          setTimeout(()=>{
-            instance.visible = false;
-          },time)
+          if(time!=-1){
+            setTimeout(()=>{
+                instance.visible = false;
+              },time)
+          }
         });
     },
     /**

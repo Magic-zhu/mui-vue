@@ -10,14 +10,10 @@
 export default {
     data(){
         return{
-            visible:false
+            visible:false,
+            message:"提示信息"
         }
     },
-    props:{
-        message:{
-            default:"提示信息"
-        }
-    }
 }
 </script>
 

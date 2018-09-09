@@ -1,23 +1,31 @@
 <template>
   <transition>
-    <div>
-      <mui-input v-model="xx" :clearable="true" placeholder="good"></mui-input>
-    </div>
+    <!-- <mui-picker></mui-picker> -->
+    <!-- <mui-dialog  :visable="xx" @confirm="kk"></mui-dialog> -->
+    <mui-switch></mui-switch>
   </transition>
 </template>
 
 <script>
-import Indicator from "../components/Indicator"
-import Toast from "../components/Toast"
+  import Toast from "../components/Toast"
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      xx:""
+      xx:true
     }
   },
   mounted(){
-    Toast.open()
+
+  },
+  methods:{
+    kk(){
+      this.xx=false;
+      let _this=this;
+      setTimeout(()=>{
+        _this.xx=true;
+      },2000)
+    }
   }
 }
 </script>
